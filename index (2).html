@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Seja bem-vindo ao site de Documentos</title>
+    <title>Documentos - Por Wagnara</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -16,46 +17,68 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: blue light;
+            background-color: #FFFFFF;
+            background-image:
+                radial-gradient(circle at 10% 20%, #fce5ef 0, transparent 25%),
+                radial-gradient(circle at 90% 80%, #fce5ef 0, transparent 25%);
             color: #333;
         }
 
+        /* CABEÇALHO */
+
         header {
-            background-color: blue light;
-            color: white;
+            background-color: #970747;
+            color: #FFFFFF;
             text-align: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 0 0 10px 10px;
+            padding: 55px 20px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 4px 12px rgba(151, 7, 71, 0.2);
         }
 
         header h1 {
+            font-size: 45px;
             margin: 0;
         }
 
+        header p {
+            font-size: 18px;
+            margin: 12px 0;
+        }
+
+        .boas-vindas {
+            background-color: #FFFFFF;
+            color: #970747;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
+
         main {
-            background-color: rgb(186, 85, 211);
+            background-color: #fce5ef;
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 25px auto;
             padding: 25px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
-            border-radius: 12px;
+            border-radius: 15px;
         }
 
-        /* PRIMEIRO ARTIGO EM DESTAQUE */
+        /* PRIMEIRO ARTIGO */
 
         .primeiro-artigo {
             grid-column: 1 / -1;
             display: flex;
             align-items: center;
             gap: 25px;
-            background-color: white;
+            background-color: #FFFFFF;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+            border: 2px solid #970747;
+            box-shadow: 0 3px 10px rgba(151, 7, 71, 0.10);
         }
 
         .primeiro-artigo img {
@@ -68,10 +91,11 @@
         /* OUTROS ARTIGOS */
 
         article:not(.primeiro-artigo) {
-            background-color: white;
+            background-color: #FFFFFF;
             padding: 18px;
             border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+            border: 1px solid #970747;
+            box-shadow: 0 3px 10px rgba(151, 7, 71, 0.10);
             transition: transform 0.3s;
         }
 
@@ -92,15 +116,18 @@
 
         .artigo-autor {
             font-weight: bold;
-            color: #777;
+            color: #970747;
         }
 
         article h2 {
-            color: #29265c;
+            color: #970747;
         }
 
+        /* BOTÕES */
+
         button {
-            background-color: #f0eaff;
+            background-color: #970747;
+            color: #FFFFFF;
             border: none;
             padding: 10px 15px;
             border-radius: 8px;
@@ -110,7 +137,18 @@
         }
 
         button:hover {
-            background-color: #d9c8ff;
+            background-color: #c21865;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background-color: #970747;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 25px;
+            font-size: 17px;
+            margin-top: 20px;
         }
 
         /* ADAPTAÇÃO PARA CELULAR */
@@ -133,27 +171,42 @@
                 height: 220px;
             }
 
+            header h1 {
+                font-size: 35px;
+            }
+
         }
+
     </style>
 </head>
 
 <body>
 
+    <!-- CABEÇALHO -->
+
     <header>
-        <h1>Documentos</h1>
+
+        <h1>Documentos ♡</h1>
+
+        <p>Organização, informação e conhecimento!</p>
+
+        <p class="boas-vindas">
+            Seja bem-vindo ao meu espaço! 💗
+        </p>
+
     </header>
 
     <main>
 
-        <!-- PRIMEIRO ARTIGO EM DESTAQUE -->
+        <!-- PRIMEIRO ARTIGO -->
 
         <article class="primeiro-artigo">
 
             <img src="documentos.jpg"
-                alt="Documentos"
-                class="imagem-documentos">
+                alt="Documentos">
 
             <div>
+
                 <p>Registros de informação</p>
 
                 <p class="artigo-autor">Por Wagnara</p>
@@ -169,6 +222,7 @@
                 <button>👍 <span>0</span></button>
 
             </div>
+
         </article>
 
         <!-- SEGUNDO ARTIGO -->
@@ -176,10 +230,10 @@
         <article>
 
             <img src="imagens/organizacao.jpg"
-                alt="Organização de documentos"
-                class="imagem-documentos">
+                alt="Organização de documentos">
 
             <div>
+
                 <p>Organização de documentos</p>
 
                 <p class="artigo-autor">Por Wagnara</p>
@@ -193,7 +247,9 @@
 
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
+
             </div>
+
         </article>
 
         <!-- TERCEIRO ARTIGO -->
@@ -201,10 +257,10 @@
         <article>
 
             <img src="imagens/arquivos.jpg"
-                alt="Arquivos e pastas"
-                class="imagem-documentos">
+                alt="Arquivos e pastas">
 
             <div>
+
                 <p>Gestão de arquivos</p>
 
                 <p class="artigo-autor">Por Wagnara</p>
@@ -218,7 +274,9 @@
 
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
+
             </div>
+
         </article>
 
         <!-- QUARTO ARTIGO -->
@@ -226,10 +284,10 @@
         <article>
 
             <img src="imagens/documentacao.jpg"
-                alt="Documentação"
-                class="imagem-documentos">
+                alt="Documentação">
 
             <div>
+
                 <p>Informação e conhecimento</p>
 
                 <p class="artigo-autor">Por Wagnara</p>
@@ -243,7 +301,9 @@
 
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
+
             </div>
+
         </article>
 
         <!-- QUINTO ARTIGO -->
@@ -251,10 +311,10 @@
         <article>
 
             <img src="imagens/documentos-digitais.jpg"
-                alt="Documentos digitais"
-                class="imagem-documentos">
+                alt="Documentos digitais">
 
             <div>
+
                 <p>Tecnologia e organização</p>
 
                 <p class="artigo-autor">Por Wagnara</p>
@@ -268,7 +328,9 @@
 
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
+
             </div>
+
         </article>
 
         <!-- SEXTO ARTIGO -->
@@ -276,10 +338,10 @@
         <article>
 
             <img src="imagens/arquivamento.jpg"
-                alt="Arquivamento de documentos"
-                class="imagem-documentos">
+                alt="Arquivamento de documentos">
 
             <div>
+
                 <p>Cuidados com documentos</p>
 
                 <p class="artigo-autor">Por Wagnara</p>
@@ -293,7 +355,9 @@
 
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
+
             </div>
+
         </article>
 
         <!-- SÉTIMO ARTIGO -->
@@ -301,10 +365,10 @@
         <article>
 
             <img src="imagens/controle.jpg"
-                alt="Controle de documentos"
-                class="imagem-documentos">
+                alt="Controle de documentos">
 
             <div>
+
                 <p>Planejamento e controle</p>
 
                 <p class="artigo-autor">Por Wagnara</p>
@@ -318,10 +382,24 @@
 
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
+
             </div>
+
         </article>
 
     </main>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>Documentos: organizando hoje, construindo um amanhã melhor! ♡</p>
+
+        <p>Por Wagnara</p>
+
+    </footer>
+
+    <!-- CONTADOR DOS BOTÕES -->
 
     <script>
 
@@ -344,4 +422,5 @@
 
 </body>
 </html>
+
 
