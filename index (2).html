@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,23 +9,20 @@
     <title>Seja bem-vindo ao site de Documentos</title>
 
     <style>
-        header {
-            background-color: blue;
-            color: white;
-        }
-
-        main {
-            background-color: rgb(186, 85, 211);
-            color: white;
+        * {
+            box-sizing: border-box;
         }
 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f4f4f9;
+            color: #333;
         }
 
         header {
+            background-color: blue;
+            color: white;
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
@@ -32,26 +30,109 @@
             border-radius: 0 0 10px 10px;
         }
 
-        main {
-            display: flex;
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            gap: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        header h1 {
+            margin: 0;
         }
 
-        img {
-            width: 220px;
-            height: 220px;
+        main {
+            background-color: rgb(186, 85, 211);
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            border-radius: 12px;
+        }
+
+        /* PRIMEIRO ARTIGO EM DESTAQUE */
+
+        .primeiro-artigo {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+        }
+
+        .primeiro-artigo img {
+            width: 45%;
+            height: 300px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 10px;
+        }
+
+        /* OUTROS ARTIGOS */
+
+        article:not(.primeiro-artigo) {
+            background-color: white;
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+            transition: transform 0.3s;
+        }
+
+        article:not(.primeiro-artigo):hover {
+            transform: translateY(-5px);
+        }
+
+        article:not(.primeiro-artigo) img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        article p {
+            line-height: 1.6;
         }
 
         .artigo-autor {
             font-weight: bold;
-            color: #555;
+            color: #777;
+        }
+
+        article h2 {
+            color: #29265c;
+        }
+
+        button {
+            background-color: #f0eaff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 5px;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #d9c8ff;
+        }
+
+        /* ADAPTAÇÃO PARA CELULAR */
+
+        @media (max-width: 700px) {
+
+            main {
+                grid-template-columns: 1fr;
+                margin: 15px;
+                padding: 15px;
+            }
+
+            .primeiro-artigo {
+                grid-column: auto;
+                flex-direction: column;
+            }
+
+            .primeiro-artigo img {
+                width: 100%;
+                height: 220px;
+            }
+
         }
     </style>
 </head>
@@ -64,134 +145,203 @@
 
     <main>
 
-        <article> 
+        <!-- PRIMEIRO ARTIGO EM DESTAQUE -->
+
+        <article class="primeiro-artigo">
+
             <img src="documentos.jpg"
-                <img src="documentos.jpg" alt="Documentos" class="imagem-documentos">
+                alt="Documentos"
+                class="imagem-documentos">
+
             <div>
                 <p>Registros de informação</p>
+
                 <p class="artigo-autor">Por Wagnara</p>
+
                 <h2>Meu primeiro post</h2>
+
                 <p>
                     Aqui vou compartilhar informações, registros
                     e conteúdos importantes sobre documentos e organização.
                 </p>
-    
+
                 <button>❤️ <span>0</span></button>
                 <button>👍 <span>0</span></button>
-    
+
             </div>
         </article>
 
+        <!-- SEGUNDO ARTIGO -->
+
         <article>
-        <img src="imagens/organizacao.jpg" alt="Organização de documentos" class="imagem-documentos">
-        <div>
-            <p>Organização de documentos</p>
-            <p class="artigo-autor">Por Wagnara</p>
-            <h2>A importância de manter os documentos organizados</h2>
-            <p>
-                Manter documentos organizados facilita a localização
-                das informações, evita perdas e torna a rotina mais prática.
-            </p>
-            <button>❤️ <span>0</span></button>
-            <button>👍 <span>0</span></button>
-        </div>
-    </article>
 
-    <article>
-        <img src="imagens/arquivos.jpg" alt="Arquivos e pastas" class="imagem-documentos">
-        <div>
-            <p>Gestão de arquivos</p>
-            <p class="artigo-autor">Por Wagnara</p>
-            <h2>Como organizar arquivos de forma eficiente</h2>
-            <p>
-                Criar categorias, separar documentos e identificar
-                pastas são passos importantes para uma boa organização.
-            </p>
-            <button>❤️ <span>0</span></button>
-            <button>👍 <span>0</span></button>
-        </div>
-    </article>
+            <img src="imagens/organizacao.jpg"
+                alt="Organização de documentos"
+                class="imagem-documentos">
 
-    <article>
-        <img src="imagens/documentacao.jpg" alt="Documentação" class="imagem-documentos">
-        <div>
-            <p>Informação e conhecimento</p>
-            <p class="artigo-autor">Por Wagnara</p>
-            <h2>O valor dos registros de informação</h2>
-            <p>
-                Os registros permitem preservar informações importantes
-                e ajudam a manter a história e a memória das organizações.
-            </p>
-            <button>❤️ <span>0</span></button>
-            <button>👍 <span>0</span></button>
-        </div>
-    </article>
+            <div>
+                <p>Organização de documentos</p>
 
-    <article>
-        <img src="imagens/documentos-digitais.jpg" alt="Documentos digitais" class="imagem-documentos">
-        <div>
-            <p>Tecnologia e organização</p>
-            <p class="artigo-autor">Por Wagnara</p>
-            <h2>A importância dos documentos digitais</h2>
-            <p>
-                A digitalização facilita o acesso, o armazenamento
-                e o compartilhamento de documentos.
-            </p>
-            <button>❤️ <span>0</span></button>
-            <button>👍 <span>0</span></button>
-        </div>
-    </article>
+                <p class="artigo-autor">Por Wagnara</p>
 
-    <article>
-        <img src="imagens/arquivamento.jpg" alt="Arquivamento de documentos" class="imagem-documentos">
-        <div>
-            <p>Cuidados com documentos</p>
-            <p class="artigo-autor">Por Wagnara</p>
-            <h2>Como preservar documentos importantes</h2>
-            <p>
-                O armazenamento adequado ajuda a conservar documentos
-                e protege informações que precisam ser consultadas futuramente.
-            </p>
-            <button>❤️ <span>0</span></button>
-            <button>👍 <span>0</span></button>
-        </div>
-    </article>
+                <h2>A importância de manter os documentos organizados</h2>
 
-    <article>
-        <img src="imagens/controle.jpg" alt="Controle de documentos" class="imagem-documentos">
-        <div>
-            <p>Planejamento e controle</p>
-            <p class="artigo-autor">Por Wagnara</p>
-            <h2>Organização: um passo para uma rotina melhor</h2>
-            <p>
-                Um bom controle documental contribui para a produtividade,
-                a segurança e a eficiência das atividades diárias.
-            </p>
-            <button>❤️ <span>0</span></button>
-            <button>👍 <span>0</span></button>
-        </div>
-    </article>
+                <p>
+                    Manter documentos organizados facilita a localização
+                    das informações, evita perdas e torna a rotina mais prática.
+                </p>
 
-</main>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- TERCEIRO ARTIGO -->
+
+        <article>
+
+            <img src="imagens/arquivos.jpg"
+                alt="Arquivos e pastas"
+                class="imagem-documentos">
+
+            <div>
+                <p>Gestão de arquivos</p>
+
+                <p class="artigo-autor">Por Wagnara</p>
+
+                <h2>Como organizar arquivos de forma eficiente</h2>
+
+                <p>
+                    Criar categorias, separar documentos e identificar
+                    pastas são passos importantes para uma boa organização.
+                </p>
+
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- QUARTO ARTIGO -->
+
+        <article>
+
+            <img src="imagens/documentacao.jpg"
+                alt="Documentação"
+                class="imagem-documentos">
+
+            <div>
+                <p>Informação e conhecimento</p>
+
+                <p class="artigo-autor">Por Wagnara</p>
+
+                <h2>O valor dos registros de informação</h2>
+
+                <p>
+                    Os registros permitem preservar informações importantes
+                    e ajudam a manter a história e a memória das organizações.
+                </p>
+
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- QUINTO ARTIGO -->
+
+        <article>
+
+            <img src="imagens/documentos-digitais.jpg"
+                alt="Documentos digitais"
+                class="imagem-documentos">
+
+            <div>
+                <p>Tecnologia e organização</p>
+
+                <p class="artigo-autor">Por Wagnara</p>
+
+                <h2>A importância dos documentos digitais</h2>
+
+                <p>
+                    A digitalização facilita o acesso, o armazenamento
+                    e o compartilhamento de documentos.
+                </p>
+
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- SEXTO ARTIGO -->
+
+        <article>
+
+            <img src="imagens/arquivamento.jpg"
+                alt="Arquivamento de documentos"
+                class="imagem-documentos">
+
+            <div>
+                <p>Cuidados com documentos</p>
+
+                <p class="artigo-autor">Por Wagnara</p>
+
+                <h2>Como preservar documentos importantes</h2>
+
+                <p>
+                    O armazenamento adequado ajuda a conservar documentos
+                    e protege informações que precisam ser consultadas futuramente.
+                </p>
+
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <!-- SÉTIMO ARTIGO -->
+
+        <article>
+
+            <img src="imagens/controle.jpg"
+                alt="Controle de documentos"
+                class="imagem-documentos">
+
+            <div>
+                <p>Planejamento e controle</p>
+
+                <p class="artigo-autor">Por Wagnara</p>
+
+                <h2>Organização: um passo para uma rotina melhor</h2>
+
+                <p>
+                    Um bom controle documental contribui para a produtividade,
+                    a segurança e a eficiência das atividades diárias.
+                </p>
+
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+
+    </main>
 
     <script>
+
         const botoes = document.querySelectorAll("button");
 
         botoes.forEach(function (botao) {
 
-            botao.addEventListener("click", botaoClicado);
-
-            function botaoClicado() {
-
-                console.log("fui clicado");
+            botao.addEventListener("click", function () {
 
                 let texto = botao.querySelector("span");
 
-                texto.textContent++;
-            }
+                texto.textContent =
+                    Number(texto.textContent) + 1;
+
+            });
+
         });
+
     </script>
 
 </body>
-
 </html>
+
